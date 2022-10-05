@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Outfit';
+    background-color: var(--very-dark-blue-main-BG);
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--very-dark-blue-card-BG);
+    max-width: 275px;
+    position: absolute;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 15px;
+    box-shadow: 
+        0px 20px 5px 10px rgba(0 0 0 / 10%),
+        0px 15px 5px 40px rgba(0 0 0 / 5%);
+}
+
+.box {
+    display: block;
+
+    max-height: auto; 
+    /* How can I fix it? I'd like it to have the same height as the ".box-img" */
+    
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.box-img {
+    max-width: 100%; 
+    border-radius: 10px;
+}
+
+.box-active-state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.box-active-state div {
+    background-color: var(--cyan); 
+    min-width: 100%;
+
+    min-height: 275px;
+    /* How can I fix it? I'd like it to have the same height as the ".box-active-state" */
+
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+.box-active-state img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    max-width: 40px;
+}
+
+.box-active-state:hover {
+    opacity: 1;
+}
+
+.container h1 {
+    display: inline-block;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    margin: 0 0 15px 0;
+}
+
+.container h1:hover {
+    color: var(--cyan);
+}
+
+.container h2 {
+    color: var(--soft-blue);
+    font-weight: 300;
+    font-size: 16.5px;
+    margin: 0 0 22px 0;
+}
+
+.infos {
+    margin: 0 0 20px 0;
+    position: relative;
+}
+
+/* How could I vertically center  the img and h3 of the ".ethereums" ? */
+.ethereums {
+    display: inline-block;
+}
+
+.ethereums img {
+    width: 10px;
+    display: inline-block;
+    margin: 0 6px 0 0;
+    translate: 0 20%;
+}
+
+.ethereums h3 {
+    color: var(--cyan);
+    font-weight: 600;
+    font-size: 14.5px;
+    display: inline-block;
+    margin: 0;
+}
+
+.time {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.time img {
+    max-width: 15px;
+    display: inline-block;
+    margin-right: 4px;
+    translate: 0 20%;
+}
+
+.time h3 {
+    color: var(--soft-blue);
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0;
+}
+
+hr {
+    background-color: var(--very-dark-blue-line);
+    border: 0;
+    height: 0.5px;
+    margin: 0 0 15px 0;
+}
+
+.avatar {
+    display: block;
+
+    /* How can I fix it? I'd like it to have the same height as the ".avatar img" */
+    max-height: auto;
+}
+
+
+.avatar img {
+    display: inline-block;
+    border-radius: 100%;
+    border: 1px solid var(--white);
+    max-width: 30px;
+    margin: 0 12px 0 0;
+}
+
+.avatar h4 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    translate: 0 -60%;
+}
+
+.avatar h4:first-of-type {
+    color: var(--soft-blue);
+}
+
+.avatar h4:last-of-type {
+    color: var(--white);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.avatar h4:last-of-type:hover {
+    color: var(--cyan);
+}
+
+.attribution { 
+    display: block;
+    font-size: 14px;
+    font-weight: 300; 
+    text-align: center; 
+    color: var(--white);
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.attribution a { 
+    color: var(--soft-blue)
+}
+
+/*  
+    Issues:
+    - How can I make a parent the same height as the child?
+    - How can I vertically center elements inside a inline-block div? 
+*/
